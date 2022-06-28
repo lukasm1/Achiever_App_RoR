@@ -9,12 +9,12 @@ How to run the app:
 
 rails db:migrate
 rails db:seed
-rails importmap:install
-
-rails hotwire:install
 rails s
 
 Then go to: http://localhost:3000
+
+Admin username: admin@admin.com
+Admin password: topsecret
 ____________________________________
 
 28.6.2022: Update and new features:
@@ -45,10 +45,7 @@ ____________________________________
 
 3) Bootstraped
 
-4) Devise Authentication:
-
-Admin username: admin@admin.com
-Admin password: topsecret
+4) Devise Authentication
 
 Functionalities:
 
