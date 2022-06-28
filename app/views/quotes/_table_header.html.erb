@@ -1,0 +1,20 @@
+<table class="table table-striped table-bordered table-hover">
+  <thead class="thead-dark">
+    <tr class="sticky-top">
+      <th width="75%">Quote:</th>
+      <th>Said by:</th>
+
+      <% if user_signed_in? %>
+
+        <% if Flipper.enabled?(:favorite, current_user) %>
+
+          <th width="1%">Favorite</th>
+
+        <% end %>
+
+      <% end %>
+
+    </tr>
+  </thead>
+
+  <tbody>

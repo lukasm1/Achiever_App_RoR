@@ -1,0 +1,2 @@
+module ActivatedsHelper
+end

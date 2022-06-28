@@ -1,0 +1,28 @@
+<div id="<%= dom_id quote %>">
+
+  <tr>
+    <td width="80%">
+      <%= link_to quote.text, quote %>
+    </td>
+    <td>
+      <%= link_to quote.achiever.name, quote.achiever %></td>
+
+  </td>
+
+  <% if user_signed_in? %>
+
+    <% if Flipper.enabled?(:favorite, current_user) %>
+
+      <td width="1%" style="text-align: center;">
+
+        <%= render partial: 'favorites/button', locals: { likeable: quote } %>
+
+      </td>
+
+    <% end %>
+
+  <% end %>
+
+</tr>
+
+</div>

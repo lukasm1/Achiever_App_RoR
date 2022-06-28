@@ -1,0 +1,34 @@
+<div id="<%= dom_id habit %>">
+
+  <tr>
+    <td>
+      <%= link_to habit.name, habit %>
+    </td>
+    <td>
+      <%= habit.frequency %></td>
+    <td>
+      <%= habit.time_demand %></td>
+
+    <td>
+      <% habit.achievers.each do |achiever| %>
+        <%= link_to achiever.name, achiever %><br>
+      <% end %>
+    </td>
+
+    <% if user_signed_in? %>
+
+      <% if Flipper.enabled?(:activated, current_user) %>
+
+        <td width="1%" style="text-align: center;">
+
+          <%= render partial: 'activateds/button', locals: { habit: habit } %>
+
+        </td>
+
+      <% end %>
+
+    <% end %>
+
+  </tr>
+
+</div>

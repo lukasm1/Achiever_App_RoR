@@ -1,0 +1,22 @@
+<% activated = current_user.activateds.find_by(habit: habit) %>
+  <% if activated.nil? %>
+
+    <form action="/activateds" method="post">
+
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+      <input type="hidden" name="activated[habit_id]" value="<%= habit.id %>">
+      <input type="submit" class="btn btn-dark" value="No">
+
+    </form>
+
+  <% else %>
+
+    <form action="<%= activated_path(activated) %>" method="post">
+
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+      <input type="hidden" name="_method" value="DELETE">
+      <input type="submit" class="btn btn-success" value="Yes">
+
+    </form>
+
+  <% end %>
